@@ -2,11 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import { deleteThread } from "@/lib/actions/threadActions/deleteThread"
+import { threadId } from "@/lib/types/threadTypes"
 import { Trash2 } from "lucide-react"
 
-export default function DeleteThreadButton({threadId}:{threadId:string}) {
+export default function DeleteThreadButton({threadId}:{threadId:threadId}) {
   async function handleDeleteThread(){
-    await deleteThread(JSON.stringify(threadId))
+    await deleteThread(threadId)
   }
   return (
     <Button variant="ghost" onClick={handleDeleteThread}>

@@ -5,13 +5,13 @@ export interface threadType {
     description:string
 }
 export interface DbThread {
-    _id:string,
+    _id:mongoose.Schema.Types.ObjectId,
     title: string;
     description: string;
-    comments: string[];
-    authorId: string;
+    comments: mongoose.Schema.Types.ObjectId[];
+    authorId: mongoose.Schema.Types.ObjectId;
     image?: string;
-    children: string[];
+    children: mongoose.Schema.Types.ObjectId[];
     createdAt: Date;
 
 }

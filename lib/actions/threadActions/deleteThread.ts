@@ -7,12 +7,11 @@ import { threadId } from "@/lib/types/threadTypes";
 
 
 
-export async function deleteThread(threadId:string){
+export async function deleteThread(threadId:threadId){
     try{
-        const threadMongoId = JSON.parse(threadId) as threadId
         const user = await fetchUser() as DbUser
-        await Thread.findByIdAndDelete(threadMongoId);
-        await User.findByIdAndUpdate(user._id,{$pop:{threads:threadMongoId}})
+        await Thread.findByIdAndDelete(threadId);
+        await User.findByIdAndUpdate(user._id,{$pop:{threads:threadId}})
     }catch(err:any){
         throw new Error(`Delete Thread Error: ${err.message}`)
     }
