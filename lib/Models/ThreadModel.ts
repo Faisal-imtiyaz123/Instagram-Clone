@@ -1,0 +1,16 @@
+import mongoose from "mongoose";
+
+const threadSchema = new mongoose.Schema({
+    title:{type:String,required:true},
+    description:{type:String,required:true},
+    comments:[{type:mongoose.Schema.Types.ObjectId,ref:"Comment"}],
+    authorId:{type:mongoose.Schema.Types.ObjectId,required:true},
+    image:{type:String},
+    children:[{type:mongoose.Schema.Types.ObjectId,ref:'Thread'}],
+    createdAt:{type:Date,default:Date.now()},
+})
+
+
+
+const Thread = mongoose.models.Thread || mongoose.model("Thread",threadSchema);
+export default Thread;
