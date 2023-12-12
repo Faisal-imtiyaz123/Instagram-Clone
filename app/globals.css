@@ -74,3 +74,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities{
+  .cutsom-modal{
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+
+  }
+  .cutsom-modal.active{
+  opacity: 1;
+  transform: scale(1);
+  }
+}
+
+
+

@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import { ThreadComments } from "./commenTypes";
 
 export interface threadType {
     title:string,
@@ -14,5 +15,9 @@ export interface DbThread {
     children: mongoose.Schema.Types.ObjectId[];
     createdAt: Date;
 
+}
+export interface ModalThread extends threadType {
+    comments:ThreadComments
+    
 }
 export type threadId = mongoose.Schema.Types.ObjectId

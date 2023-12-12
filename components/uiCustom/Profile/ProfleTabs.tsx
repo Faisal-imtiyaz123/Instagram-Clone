@@ -1,6 +1,6 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Thread from "@/components/uiCustom/Threads/Thread";
+import Thread from "@/components/uiCustom/Threads/ThreadCard";
 import { DbThread } from "@/lib/types/threadTypes";
 
 export default function ProfleTabs({threads}:{threads:DbThread[]|undefined}) {

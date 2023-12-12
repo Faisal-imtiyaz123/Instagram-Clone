@@ -6,7 +6,6 @@ const threadSchema = new mongoose.Schema({
     comments:[{type:mongoose.Schema.Types.ObjectId,ref:"Comment"}],
     authorId:{type:mongoose.Schema.Types.ObjectId,required:true},
     image:{type:String},
-    children:[{type:mongoose.Schema.Types.ObjectId,ref:'Thread'}],
     createdAt:{type:Date,default:Date.now()},
 })
 

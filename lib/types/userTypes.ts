@@ -1,3 +1,5 @@
+import mongoose from "mongoose"
+
 export interface user{
     id:string
     username:string
@@ -9,6 +11,8 @@ export interface user{
 }
 
 export interface DbUser extends user {
-    _id:string
+    _id:mongoose.Schema.Types.ObjectId
 }
+
+export type authorId = mongoose.Schema.Types.ObjectId
 

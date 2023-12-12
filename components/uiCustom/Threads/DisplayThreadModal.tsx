@@ -1,23 +1,24 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { DbThread } from "@/lib/types/threadTypes";
-import DeleteThreadButton from "./deleteThreadButton";
 
 
-export default function Thread({thread}:{thread:DbThread}) {
+
+export default function DisplayThreadModal({title,description}:{title:string,description:string}) {
+
   return (
-  <Card>
+  <Card className="w-[10rem] h-[20rem]">
   <CardHeader>
     <div className="flex justify-between">
-    <CardTitle>{thread.title}</CardTitle>
-    <DeleteThreadButton threadId={thread._id}/>
+    <CardTitle>{title}</CardTitle>
     </div>
-    <CardDescription></CardDescription>
   </CardHeader>
   <CardContent>
-    <p>{thread.description}</p>
+    <p>{description}</p>
   </CardContent>
+
 </Card>
 
   )
 }
+
