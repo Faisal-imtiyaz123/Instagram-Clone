@@ -1,14 +1,21 @@
 "use client"
+import { deleteComment } from "@/lib/actions/commentActions/deleteComment";
+import { commentId } from "@/lib/types/commenTypes";
+import { threadId } from "@/lib/types/threadTypes";
+import { Trash } from "lucide-react";
 
 
-import { useEffect } from "react"
 
-export default function CommentModalItem({comment}:{comment:string}) {
- 
-  return (
-    <div className="bg-gray-100 border-b">
-        {comment}
+export default function CommentModalItem({props}: {props: {comment: string ,commentId:string,threadId:string}}) {
+  async function handleDeleteComment(){
+    await deleteComment(props.commentId,props.threadId)
+    console.log("comment deleted")
+  }
+  return <div className="bg-gray-100 border-b flex justify-between">
+    {props.comment}
+    <button onClick={handleDeleteComment}>
+      <Trash/>
+    </button>
      
-    </div>
-  )
+    </div>;
 }

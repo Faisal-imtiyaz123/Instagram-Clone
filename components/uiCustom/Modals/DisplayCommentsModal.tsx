@@ -4,11 +4,17 @@ import { threadId } from "@/lib/types/threadTypes"
 import CommentModalItem from "../Comments/CommentModalItem"
 
 
+
 export default async function DisplayCommentsModal({threadId}:{threadId:threadId}) {
-  const {_id,comments} = await fetchComments(threadId) as CommentObj
+  const {comments} = await fetchComments(threadId) as CommentObj
+ 
   return (
+   
+
     <div>
-      {comments.map(commentObj=><CommentModalItem key={_id.toString()} comment={commentObj.comment}/>)}
+      {comments.map(commentObj=> <CommentModalItem key={commentObj._id.toString()} props={{comment:commentObj.comment,commentId:commentObj._id.toString(),threadId:threadId.toString()}} />)}
+
     </div>
+ 
   )
 }

@@ -9,7 +9,7 @@ import { currentUser } from "@clerk/nextjs";
 export async function fetchUser<TOut>():Promise<DbUser|TOut|null>{
     const user = await currentUser()
     try{
-
+        console.log(user?.id,"user id")
         connectToDB()
         const userData = await User.findOne({id:user?.id})
         return userData 

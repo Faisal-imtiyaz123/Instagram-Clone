@@ -6,6 +6,7 @@ import CommentForm from "../Forms/commentForm";
 import DisplayThreadAndCommentModal from "../Modals/DisplayThreadAndCommentModal";
 import DisplayCommentsModal from "../Modals/DisplayCommentsModal";
 import DisplayThreadModal from "./DisplayThreadModal";
+import Link from "next/link";
 
 
 
@@ -25,24 +26,9 @@ export default async function HomeThreadCard({thread,userImage}:{thread:DbThread
   </CardHeader>
   <CardContent>
     <p>{thread.description}</p>
+    <Link href={`home/thread/${thread._id}`}>View all comments</Link>
   </CardContent>
-  {/* <div className="text-xs">
-  <Dialog>
-  <DialogTrigger>View all comments</DialogTrigger>
-  <DialogContent className="w-[100rem] h-[40rem]">
-    <DialogHeader className="w-[80rem]">
-      <DialogDescription>
-  
-         <DisplayThreadModal thread={thread}/> 
-      </DialogDescription>
-    </DialogHeader>
-  </DialogContent>
-</Dialog>
-</div> */}
- <DisplayThreadAndCommentModal>
-  <DisplayThreadModal title={thread.title} description={thread.description}/>
-  <DisplayCommentsModal threadId={thread._id}/>
- </DisplayThreadAndCommentModal>
+
   <CommentForm userImage={userImage} threadId={thread._id}/>
 </Card>
  </div>

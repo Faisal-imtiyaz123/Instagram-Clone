@@ -8,7 +8,7 @@ export default authMiddleware({
   publicRoutes:["/"],
   afterAuth(auth,req){
     if(auth.userId && auth.isPublicRoute){
-      const url = new URL("/platform",req.url)
+      const url = new URL("/home",req.url)
       return NextResponse.redirect(url)
     }
   }

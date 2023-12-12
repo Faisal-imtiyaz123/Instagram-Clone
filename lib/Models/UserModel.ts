@@ -1,22 +1,14 @@
 import mongoose from "mongoose";
 
-interface User{
-  id: string,
-  username: string,
-  name:string,
-  image?:string,
-  bio?:string,
-  onboarded?:boolean,
-  threads?:mongoose.Schema.Types.ObjectId[],
-  communities?:mongoose.Schema.Types.ObjectId[],
 
-}
-const userSchema = new mongoose.Schema<User>({
+
+const userSchema = new mongoose.Schema({
   id:{type:String, required:true},
   username: {
     type: String,
     unique: true,
     required: true,
+    // index:{unique:true,type:'text'}
   },
   name: {
     type: String,
@@ -42,6 +34,8 @@ const userSchema = new mongoose.Schema<User>({
   ],
 });
 
-const User = mongoose.models.User || mongoose.model<User>("User", userSchema);
+
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+
 
 export default User;

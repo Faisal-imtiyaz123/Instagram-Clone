@@ -11,6 +11,7 @@ export interface DbComment{
 }
 interface commentObject{
     comment:string
+    _id:mongoose.Schema.Types.ObjectId
 }
 export type ThreadComments= commentObject[]
 
@@ -18,6 +19,6 @@ export interface ThreadCommentsObject{
     comments:ThreadComments
 }
 export interface CommentObj {
-    _id:mongoose.Schema.Types.ObjectId,
     comments:ThreadComments
 }
+export type commentId = mongoose.Schema.Types.ObjectId
