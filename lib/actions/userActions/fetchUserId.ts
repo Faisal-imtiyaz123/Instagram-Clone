@@ -8,5 +8,5 @@ interface userId{
 export async function fetchUserId():Promise<userId> {
     const user = await currentUser()
     const userDb = await User.findOne({id: user?.id})
-    return {id:userDb.id}
+    return userDb._id.toString()
 }

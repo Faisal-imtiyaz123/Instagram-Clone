@@ -7,6 +7,7 @@ const threadSchema = new mongoose.Schema({
     authorId:{type:mongoose.Schema.Types.ObjectId,required:true},
     image:{type:String},
     createdAt:{type:Date,default:Date.now()},
+    likes:{type:Number},
 })
 
 

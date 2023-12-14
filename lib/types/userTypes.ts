@@ -7,6 +7,7 @@ export interface user{
     bio:string
     image:string
     onboarded?:boolean
+    friends:mongoose.Schema.Types.ObjectId[]
 
 }
 

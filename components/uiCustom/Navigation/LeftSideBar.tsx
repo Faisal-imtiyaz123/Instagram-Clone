@@ -1,6 +1,7 @@
 import { navigationRoutes } from "@/Constants/navigationRoutes";
 import NavigationRoute from "./NavigationRoute";
 import { UserButton } from "@clerk/nextjs";
+import { MoreDropDown } from "../More/MoreDialog";
 
 
 export default function LeftSideBar() {
@@ -10,7 +11,9 @@ export default function LeftSideBar() {
         {navigationRoutes.map((navigationRouteItem)=><NavigationRoute key={navigationRouteItem.route} navigationRouteItem={navigationRouteItem}/>)}
         <div className="fixed bottom-4 left-4 bg-red-100 p-8 rounded-full">
           <UserButton afterSignOutUrl="/" />
+
         </div>
+          <MoreDropDown/>
     </div>
   )
 }

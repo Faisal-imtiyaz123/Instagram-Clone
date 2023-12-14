@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { string } from "zod";
 
 
 
@@ -8,7 +9,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: true,
-    // index:{unique:true,type:'text'}
+   
   },
   name: {
     type: String,
@@ -32,6 +33,35 @@ const userSchema = new mongoose.Schema({
       ref: "Community",
     },
   ],
+  followers:[
+    {
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'User',
+  }
+],
+following:[{
+  type:mongoose.Schema.Types.ObjectId,
+    ref:'User',
+}],
+messagedFollowers:[{
+  type:mongoose.Schema.Types.ObjectId,
+  ref:'User'
+}],
+requestedUsers:[{
+  type:mongoose.Schema.Types.ObjectId,
+  ref:'User'
+}],
+requestingUsers:[
+  {
+  type:mongoose.Schema.Types.ObjectId,
+  ref:'User'
+  }
+],
+blockedUsers:[{
+  type:mongoose.Schema.Types.ObjectId,
+  ref:'User'
+}],
+
 });
 
 
