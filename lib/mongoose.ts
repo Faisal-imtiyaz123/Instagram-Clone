@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 let isConnected = false;
-const MONGO_URL = "mongodb+srv://supremerealm2003:4IbfKaUI74YDucWl@cluster0.fkvzlvi.mongodb.net/Discord"
+// const MONGO_URL = "mongodb+srv://supremerealm2003:4IbfKaUI74YDucWl@cluster0.fkvzlvi.mongodb.net/Discord"
 export const connectToDB = async ()=>{
 mongoose.set("strictQuery",true)
 if(isConnected){
@@ -8,7 +8,7 @@ if(isConnected){
     return;
 }
 try{
-    await mongoose.connect(MONGO_URL)
+    await mongoose.connect(process.env.MONGO_URL!)
     isConnected=true;
     console.log("DB connected")
 
