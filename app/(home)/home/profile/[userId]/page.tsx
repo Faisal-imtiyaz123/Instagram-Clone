@@ -11,7 +11,7 @@ export default async  function otherUserProfilePage({params}:{params:{userId:str
   if(params.userId == user._id.toString()) redirect('/home/profile')
   return (
     <div>
-        <OtherUserProfile userId={user._id.toString()}/>
+        <OtherUserProfile userId={params.userId}/>
     </div>
   )
 }

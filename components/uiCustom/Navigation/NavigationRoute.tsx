@@ -1,8 +1,9 @@
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NavigationRoute } from "@/Constants/navigationRoutes";
+
 import Link from "next/link";
 
-export default function NavigationRoute({navigationRouteItem}:{navigationRouteItem:NavigationRoute}) {
+export default function NavigationRoute({navigationRouteItem}:{navigationRouteItem:any}) {
   return (
   
 
@@ -11,8 +12,12 @@ export default function NavigationRoute({navigationRouteItem}:{navigationRouteIt
       <Link href={navigationRouteItem.route} className='flex gap-4 items-center p-3 hover:bg-gray-100 rounded-lg' >
     
 
-        <FontAwesomeIcon  icon={navigationRouteItem.icon} width={28} height={28} />
-        <div className='text-[1rem] text-center hidden md:block'>
+        {/* <FontAwesomeIcon  icon={navigationRouteItem.icon} width={24} height={24} /> */}
+        <div>
+
+        {navigationRouteItem.icon && <navigationRouteItem.icon/>}
+        </div>
+        <div className='text-[16px] text-center hidden md:block'>
         {navigationRouteItem.routeName}
         </div>
 

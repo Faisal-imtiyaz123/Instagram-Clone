@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { string } from "zod";
+import { boolean, string } from "zod";
 
 
 
@@ -43,7 +43,7 @@ following:[{
   type:mongoose.Schema.Types.ObjectId,
     ref:'User',
 }],
-messagedFollowers:[{
+messagedUsers:[{
   type:mongoose.Schema.Types.ObjectId,
   ref:'User'
 }],
@@ -61,6 +61,22 @@ blockedUsers:[{
   type:mongoose.Schema.Types.ObjectId,
   ref:'User'
 }],
+mutedAccounts:[{
+  type:mongoose.Schema.Types.ObjectId,
+  ref:'User'
+}],
+accountSettings:{
+  pushNotifications:{
+    type:mongoose.Schema.Types.Mixed,
+  },
+  accountType:{type:Boolean},
+  otherUserInteractio :{
+    type:mongoose.Schema.Types.Mixed,
+
+  }
+
+  
+}
 
 });
 

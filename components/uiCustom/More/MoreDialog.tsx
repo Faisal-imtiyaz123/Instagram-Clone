@@ -9,9 +9,11 @@ import {
   } from "@/components/ui/dropdown-menu"
   
 import { Menu } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 
 export function MoreDropDown() {
+  const router = useRouter()
 
 
   return (
@@ -22,7 +24,7 @@ export function MoreDropDown() {
   <DropdownMenuContent>
     <DropdownMenuLabel>My Account</DropdownMenuLabel>
     <DropdownMenuSeparator />
-    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem onClick={()=>router.push('/home/account')}>Account Settings</DropdownMenuItem>
     <DropdownMenuItem>Billing</DropdownMenuItem>
     <DropdownMenuItem>Team</DropdownMenuItem>
     <DropdownMenuItem>Subscription</DropdownMenuItem>

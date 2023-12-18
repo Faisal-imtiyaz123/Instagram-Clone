@@ -1,10 +1,7 @@
-import MessagingSideBar from "@/components/uiCustom/Messaging/MessagingSideBar";
 
 
-export default function messagingPage() {
+export default function page() {
   return (
-    <div>
-        <MessagingSideBar/>
-    </div>
+    <div> Here You see your messages </div>
   )
 }

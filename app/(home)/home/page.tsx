@@ -19,6 +19,7 @@ export default async function HomePage() {
   
   return (
     <div className="flex justify-center w-full bg-gray-100">
+      thread
       {threads.map((thread)=> <HomeThreadCard key={thread.title} thread={thread} userImage={user.image}/>)}
     </div>
   )

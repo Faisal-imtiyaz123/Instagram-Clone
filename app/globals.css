@@ -89,5 +89,34 @@
   }
 }
 
+@keyframes slideIn {
+  from {
+    transform-origin:left ;
+    width: 15rem;
+   
+  }
+  to {
+    width: 0%;
+    transform-origin:left;
+   
+  }
+}
 
+@keyframes slideOut {
+  from {
+    transform: scaleX(0%);
+    transform-origin:left ;
+  }
+  to {
+    transform-origin: left;
+    transform: scaleX(100%);
+  }
+}
 
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-slideOut {
+  animation: slideOut 0.3s ease-out;
+}

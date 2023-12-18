@@ -7,7 +7,13 @@ export interface user{
     bio:string
     image:string
     onboarded?:boolean
-    friends:mongoose.Schema.Types.ObjectId[]
+    followers:mongoose.Schema.Types.ObjectId[],
+    following:mongoose.Schema.Types.ObjectId[],
+    requestedUsers:mongoose.Schema.Types.ObjectId[],
+    requestingUsers:mongoose.Schema.Types.ObjectId[],
+    blockedUsers:mongoose.Schema.Types.ObjectId[],
+    mutedAccounts:mongoose.Schema.Types.ObjectId[],
+
 
 }
 

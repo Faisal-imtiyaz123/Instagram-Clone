@@ -35,9 +35,6 @@ export default function DisplayThreadAndCommentModal({children}:{children:React.
   return (
     <div >
     <div>
-      {/* <span onClick={()=>router.push(`home/thread/${t}`)} className="text-xs cursor-pointer">
-        View all Comments 
-      </span> */}
      
       <div 
         className={`fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 custom-modal`}
